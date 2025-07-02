@@ -52,7 +52,7 @@ def create_accounts():
     account.create()
     message = account.serialize()
     location_url = url_for("get_accounts", account_id=account.id,
-                          _external=True)
+                           _external=True)
     return make_response(
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
@@ -130,7 +130,7 @@ def delete_accounts(account_id):
     app.logger.info("Request to delete Account with id: %s", account_id)
 
     account = Account.find(account_id)
-    if account:
+Li    if account:
         account.delete()
         app.logger.info("Account with ID [%s] delete complete.", account_id)
 
