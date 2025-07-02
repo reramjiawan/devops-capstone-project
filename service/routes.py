@@ -130,7 +130,7 @@ def delete_accounts(account_id):
     app.logger.info("Request to delete Account with id: %s", account_id)
 
     account = Account.find(account_id)
-Li    if account:
+    if account:
         account.delete()
         app.logger.info("Account with ID [%s] delete complete.", account_id)
 
