@@ -187,7 +187,7 @@ class TestAccountService(TestCase):
         test_account = AccountFactory()
         response = self.client.post(BASE_URL, json=test_account.serialize())
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        
+
         # update the account
         new_account = response.get_json()
         new_account["name"] = "Something Known"
